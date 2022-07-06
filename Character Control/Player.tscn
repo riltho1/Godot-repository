@@ -140,11 +140,11 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 12, 4 )
+position = Vector2( 38, 3 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4.4375, 3.78333 )
+position = Vector2( -3.5625, 2.60952 )
 scale = Vector2( 0.804687, 0.82619 )
 texture = ExtResource( 1 )
 hframes = 8
@@ -152,7 +152,7 @@ vframes = 15
 frame = 40
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2( -4.25, 4 )
+position = Vector2( -3.375, 2.82619 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
