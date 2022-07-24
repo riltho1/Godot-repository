@@ -19,19 +19,25 @@ func _ready():
 	pass
 
 func update_animation(anim):
+	if velocity.x < 0:
+		$Sprite.flip_h = true
+	elif velocity.x > 0:
+		$Sprite.flip_h = false
+		
 	match(anim):
 		state.FALL:
-			$AnimationPlayer.play("fall")
+			$AnimationPlayer.play("Fall")
 		state.ATTACK:
-			$AnimationPlayer.play("attack")
+			$AnimationPlayer.play("Attack")
 		state.IDLE:
-			$AnimationPlayer.play("idle")
+			$AnimationPlayer.play("Idle")
 		state.JUMP:
-			$AnimationPlayer.play("jump")
+			$AnimationPlayer.play("Jump")
 		state.PUSHING:
-			$AnimationPlayer.play("pushing")
+			$AnimationPlayer.play("Pushing")
 		state.RUNNING:
-			$AnimationPlayer.play("running")
+			$AnimationPlayer.play("Running")
+	
 	pass
 	
 func handle_state(player_state):
@@ -56,13 +62,11 @@ func _physics_process(delta):
 		player_state = state.STARTJUMP
 	elif velocity.x != 0:
 		player_state = state.RUNNING
-	
 	if not is_on_floor():
 		if velocity.y < 0:
-			state.JUMP
+			player_state = state.JUMP
 		if velocity.y >0:
 			player_state = state.FALL
-			
 	handle_state(player_state)
 	update_animation(player_state)
 	#set gravity
