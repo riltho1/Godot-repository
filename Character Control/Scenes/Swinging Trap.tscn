@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/trap_suspended_anim_strip_18.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Swinging Trap.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Swinging Trap.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -21,6 +21,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Swing"
+length = 1.8
+loop = true
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
@@ -28,8 +30,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( -104.1, -0.25, 0, 0.4, 1.7469, 104.1, -0.3, -0.203102, 0.4, 0.21357, -104.1, -0.4, 2.58024, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
+"points": PoolRealArray( -104.1, -0.25, 0, 0.6, -0.261101, 104.1, -0.5, -0.919434, 0.7, -0.599998, -104.1, -0.4, -0.400002, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.9, 1.8 )
 }
 
 [node name="Swinging Trap" type="Node2D"]
