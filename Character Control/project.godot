@@ -12,6 +12,10 @@ config_version=4
 
 config/name="Platformer Practise Set Up"
 
+[autoload]
+
+GameStats="*res://Scripts/game_stats.gd"
+
 [display]
 
 window/size/width=1280
