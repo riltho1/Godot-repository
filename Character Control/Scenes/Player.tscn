@@ -172,3 +172,5 @@ anims/Running = SubResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2( -2, -1 )
 shape = SubResource( 10 )
+
+[connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]

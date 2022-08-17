@@ -324,5 +324,8 @@ custom_fonts/font = SubResource( 35 )
 text = "00:00:00"
 align = 2
 
+[node name="SavePoint2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 119, 181 )
+
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]
