@@ -90,6 +90,8 @@ extents = Vector2( 8, 12 )
 position = Vector2( 39, 32 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4.76837e-07, 0 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 hframes = 4
 
@@ -108,5 +110,7 @@ autoplay = "Waterfall"
 anims/RESET = SubResource( 1 )
 anims/Waterfall = SubResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Deadly"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
