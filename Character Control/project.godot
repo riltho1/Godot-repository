@@ -15,6 +15,7 @@ config/name="Platformer Practise Set Up"
 [autoload]
 
 GameStats="*res://Scripts/game_stats.gd"
+SoundPlayer="*res://Scripts/sound_player.gd"
 
 [display]
 
