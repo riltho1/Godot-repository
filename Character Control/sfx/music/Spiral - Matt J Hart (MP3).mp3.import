@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spiral - Matt J Hart (MP3).mp3-8abb15bedd88003da95543a9b77623c2.mp3str"
+
+[deps]
+
+source_file="res://sfx/music/Spiral - Matt J Hart (MP3).mp3"
+dest_files=[ "res://.import/Spiral - Matt J Hart (MP3).mp3-8abb15bedd88003da95543a9b77623c2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
