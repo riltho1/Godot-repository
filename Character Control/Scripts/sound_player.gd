@@ -3,8 +3,8 @@ extends Node
 onready var music = AudioStreamPlayer.new()
 
 var music_tracks = {
-	"title_track":"res://sfx/music/Spiral - Matt J Hart (MP3).mp3",
-	"main":"res://sfx/music/Spiral - Matt J Hart (MP3).mp3",
+	"title_track":"res://sfx/music/happywalking.wav",
+	"main":"res://sfx/music/happywalking.wav",
 }
 var sound_effects = {
 	"jump":"res://sfx/Player/jump.wav",
