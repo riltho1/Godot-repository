@@ -1,12 +1,102 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TitleMenu.gd" type="Script" id=1]
 [ext_resource path="res://OtherAssets/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://Sprites/middle.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/back.png" type="Texture" id=4]
+[ext_resource path="res://OtherAssets/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
+size = 64
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "MoveToMain"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1760, 360 ), Vector2( 640, 360 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "MoveToOptions"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 360 ), Vector2( 1760, 360 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 360 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 360 ) ]
+}
 
 [node name="TitleMenu" type="Control"]
 anchor_right = 1.0
@@ -14,138 +104,155 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Main Menu" type="MarginContainer" parent="."]
-margin_left = 544.0
-margin_top = 315.0
-margin_right = 701.0
-margin_bottom = 383.0
+margin_left = 352.0
+margin_top = 256.0
+margin_right = 872.0
+margin_bottom = 472.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Main Menu"]
-margin_right = 157.0
-margin_bottom = 68.0
+margin_right = 520.0
+margin_bottom = 216.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Menu/CenterContainer"]
-margin_right = 157.0
-margin_bottom = 68.0
+margin_left = 7.0
+margin_top = 65.0
+margin_right = 513.0
+margin_bottom = 151.0
 
 [node name="Label" type="Label" parent="Main Menu/CenterContainer/HBoxContainer"]
-margin_top = 25.0
-margin_right = 90.0
-margin_bottom = 42.0
+margin_top = 10.0
+margin_right = 350.0
+margin_bottom = 75.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0.960784, 0.92549, 0.92549, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Platformer"
 
 [node name="CenterContainer" type="CenterContainer" parent="Main Menu/CenterContainer/HBoxContainer"]
-margin_left = 94.0
-margin_right = 157.0
-margin_bottom = 68.0
+margin_left = 354.0
+margin_right = 506.0
+margin_bottom = 86.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer"]
-margin_right = 63.0
-margin_bottom = 68.0
+margin_right = 152.0
+margin_bottom = 86.0
 
 [node name="Start" type="Button" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 63.0
-margin_bottom = 20.0
+margin_right = 152.0
+margin_bottom = 26.0
 custom_colors/font_color = Color( 0.972549, 0.0588235, 0.0588235, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Start"
 flat = true
 icon_align = 1
 
 [node name="Options" type="Button" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 63.0
-margin_bottom = 44.0
+margin_top = 30.0
+margin_right = 152.0
+margin_bottom = 56.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Options"
 flat = true
 
 [node name="Exit" type="Button" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 63.0
-margin_bottom = 68.0
+margin_top = 60.0
+margin_right = 152.0
+margin_bottom = 86.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Exit"
 flat = true
 
 [node name="OptionsMenu" type="MarginContainer" parent="."]
-margin_left = 1723.0
-margin_top = 198.0
-margin_right = 2022.0
-margin_bottom = 413.0
+margin_left = 1664.0
+margin_top = 256.0
+margin_right = 1963.0
+margin_bottom = 471.0
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsMenu"]
 margin_right = 299.0
 margin_bottom = 215.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer"]
-margin_left = 102.0
-margin_top = 63.0
-margin_right = 196.0
-margin_bottom = 151.0
+margin_left = 35.0
+margin_top = 56.0
+margin_right = 263.0
+margin_bottom = 158.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
-margin_right = 94.0
-margin_bottom = 16.0
+margin_right = 228.0
+margin_bottom = 20.0
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_top = 1.0
-margin_right = 18.0
-margin_bottom = 15.0
-text = "Sfx"
+margin_right = 60.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "SFX"
 align = 1
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 22.0
-margin_right = 38.0
+margin_left = 64.0
+margin_right = 80.0
 margin_bottom = 16.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
-margin_top = 20.0
-margin_right = 94.0
-margin_bottom = 36.0
+margin_top = 24.0
+margin_right = 228.0
+margin_bottom = 44.0
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_top = 1.0
-margin_right = 49.0
-margin_bottom = 15.0
-text = "Volume"
+margin_right = 120.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "VOLUME"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 53.0
-margin_right = 69.0
+margin_left = 124.0
+margin_right = 140.0
 margin_bottom = 16.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
-margin_top = 40.0
-margin_right = 94.0
-margin_bottom = 64.0
+margin_top = 48.0
+margin_right = 228.0
+margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
-margin_top = 5.0
-margin_right = 66.0
-margin_bottom = 19.0
-text = "Fullscreen"
+margin_top = 2.0
+margin_right = 200.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "FULLSCREEN"
 
 [node name="CheckBox" type="CheckBox" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 70.0
-margin_right = 94.0
+margin_left = 204.0
+margin_right = 228.0
 margin_bottom = 24.0
 
 [node name="Back" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 94.0
-margin_bottom = 88.0
-text = "Back"
+margin_top = 76.0
+margin_right = 228.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "BACK"
 flat = true
 align = 0
 icon_align = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Start"
+anims/MoveToMain = SubResource( 5 )
+anims/MoveToOptions = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+anims/Start = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -166,3 +273,6 @@ motion_mirroring = Vector2( 1152, 0 )
 scale = Vector2( 3.2526, 3 )
 texture = ExtResource( 3 )
 centered = false
+
+[connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]
