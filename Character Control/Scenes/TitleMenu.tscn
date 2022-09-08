@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/TitleMenu.gd" type="Script" id=1]
 [ext_resource path="res://OtherAssets/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/middle.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/back.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Backgrounds/middle.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Backgrounds/back.png" type="Texture" id=4]
 [ext_resource path="res://OtherAssets/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -140,7 +140,7 @@ margin_bottom = 86.0
 [node name="Start" type="Button" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 margin_right = 152.0
 margin_bottom = 26.0
-custom_colors/font_color = Color( 0.972549, 0.0588235, 0.0588235, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Start"
 flat = true
@@ -150,7 +150,7 @@ icon_align = 1
 margin_top = 30.0
 margin_right = 152.0
 margin_bottom = 56.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Options"
 flat = true
@@ -159,7 +159,7 @@ flat = true
 margin_top = 60.0
 margin_right = 152.0
 margin_bottom = 86.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Exit"
 flat = true
@@ -190,12 +190,15 @@ margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "SFX"
-align = 1
 
-[node name="HSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 64.0
-margin_right = 80.0
+margin_right = 164.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 margin_top = 24.0
@@ -203,16 +206,20 @@ margin_right = 228.0
 margin_bottom = 44.0
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 120.0
+margin_right = 100.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
-text = "VOLUME"
+text = "MUSIC"
 
-[node name="HSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 124.0
-margin_right = 140.0
+[node name="MusicSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 104.0
+margin_right = 204.0
 margin_bottom = 16.0
+rect_min_size = Vector2( 100, 0 )
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 margin_top = 48.0
@@ -275,4 +282,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="toggled" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3/CheckBox" to="." method="_on_CheckBox_toggled"]
 [connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]

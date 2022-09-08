@@ -15,7 +15,7 @@
 [ext_resource path="res://Sprites/nature-paltformer-tileset-16x16.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Waterfall.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sprites/env-preview.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Backgrounds/env-preview.png" type="Texture" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -646,8 +646,8 @@ font_data = ExtResource( 8 )
 script = ExtResource( 7 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 319, 119 )
-scale = Vector2( 1.24219, 0.991667 )
+position = Vector2( 319.875, 144 )
+scale = Vector2( 1.25, 1.2 )
 texture = ExtResource( 16 )
 offset = Vector2( 0.1, 0 )
 
