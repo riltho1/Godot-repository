@@ -142,7 +142,7 @@ margin_right = 152.0
 margin_bottom = 26.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Start"
+text = "START"
 flat = true
 icon_align = 1
 
@@ -152,7 +152,7 @@ margin_right = 152.0
 margin_bottom = 56.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Options"
+text = "OPTIONS"
 flat = true
 
 [node name="Exit" type="Button" parent="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
@@ -161,39 +161,42 @@ margin_right = 152.0
 margin_bottom = 86.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Exit"
+text = "EXIT"
 flat = true
 
 [node name="OptionsMenu" type="MarginContainer" parent="."]
-margin_left = 1664.0
-margin_top = 256.0
-margin_right = 1963.0
-margin_bottom = 471.0
+margin_left = 1672.0
+margin_top = 272.0
+margin_right = 1972.0
+margin_bottom = 487.0
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsMenu"]
-margin_right = 299.0
+margin_right = 300.0
 margin_bottom = 215.0
+rect_min_size = Vector2( 200, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer"]
-margin_left = 35.0
 margin_top = 56.0
-margin_right = 263.0
+margin_right = 300.0
 margin_bottom = 158.0
+rect_min_size = Vector2( 300, 0 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
-margin_right = 228.0
+margin_right = 300.0
 margin_bottom = 20.0
+alignment = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 60.0
+margin_left = 136.0
+margin_right = 196.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 9 )
 text = "SFX"
 
 [node name="SFXSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 64.0
-margin_right = 164.0
+margin_left = 200.0
+margin_right = 300.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
@@ -202,19 +205,22 @@ value = 1.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 margin_top = 24.0
-margin_right = 228.0
+margin_right = 300.0
 margin_bottom = 44.0
+alignment = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 100.0
+margin_left = 96.0
+margin_right = 196.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "MUSIC"
+align = 2
 
 [node name="MusicSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 104.0
-margin_right = 204.0
+margin_left = 200.0
+margin_right = 300.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 100, 0 )
 max_value = 1.0
@@ -223,7 +229,7 @@ value = 1.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 margin_top = 48.0
-margin_right = 228.0
+margin_right = 300.0
 margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
@@ -233,6 +239,7 @@ margin_bottom = 22.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "FULLSCREEN"
+align = 2
 
 [node name="CheckBox" type="CheckBox" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
 margin_left = 204.0
@@ -241,13 +248,12 @@ margin_bottom = 24.0
 
 [node name="Back" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer"]
 margin_top = 76.0
-margin_right = 228.0
+margin_right = 300.0
 margin_bottom = 102.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
-text = "BACK"
+text = " BACK"
 flat = true
-align = 0
 icon_align = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -281,6 +287,7 @@ scale = Vector2( 3.2526, 3 )
 texture = ExtResource( 3 )
 centered = false
 
+[connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_MusicSlider_value_changed"]

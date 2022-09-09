@@ -23,3 +23,7 @@ func _on_CheckBox_toggled(button_pressed):
 		OS.window_fullscreen = true
 	else:
 		OS.window_fullscreen = false
+
+
+func _on_Start_pressed():
+	get_tree().change_scene("res://Scenes/World.tscn")

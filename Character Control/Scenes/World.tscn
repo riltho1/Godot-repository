@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Waterfall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sprites/Backgrounds/env-preview.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/pause.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -727,8 +728,16 @@ custom_fonts/font = SubResource( 35 )
 text = "00:00:00"
 align = 2
 
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/Control"]
+margin_right = 1000.0
+margin_bottom = 986.0
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 17 )
+
 [node name="SavePoint2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 232, 182 )
+
+[connection signal="pressed" from="CanvasLayer/Control/MenuButton" to="." method="_on_MenuButton_pressed"]
 
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]
