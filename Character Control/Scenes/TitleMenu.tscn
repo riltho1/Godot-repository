@@ -289,6 +289,7 @@ centered = false
 
 [connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Main Menu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="toggled" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3/CheckBox" to="." method="_on_CheckBox_toggled"]

@@ -10,3 +10,13 @@ func set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
+
+
+func _on_Resume_pressed():
+	self.is_paused = false
+
+func _on_Main_Menu_pressed():
+	get_tree().change_scene("res://Scenes/TitleMenu.tscn")
+
+func _on_Quit_pressed():
+	get_tree().quit()

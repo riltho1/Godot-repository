@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Platformer Practise Set Up"
+run/main_scene="res://Scenes/World.tscn"
 
 [autoload]
 
