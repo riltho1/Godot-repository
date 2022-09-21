@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://OtherAssets/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/Backgrounds/middle.png" type="Texture" id=2]
@@ -11,11 +11,59 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "ControlsToPause"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1920, 360 ), Vector2( 640, 360 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "PauseToContols"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 360 ), Vector2( 1920, 360 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 360 ) ]
+}
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
@@ -79,6 +127,16 @@ custom_fonts/font = SubResource( 2 )
 text = "RESUME GAME"
 flat = true
 
+[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 63.0
+margin_right = 204.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "CONTROLS"
+flat = true
+
 [node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 63.0
 margin_right = 204.0
@@ -100,6 +158,14 @@ flat = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera2D")
+autoplay = "PauseToContols"
+anims/ControlsToPause = SubResource( 6 )
+anims/PauseToContols = SubResource( 7 )
+anims/RESET = SubResource( 8 )
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
