@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass
+	GameStats.start_level()
 
 func _process(delta):
 	pass
