@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Waterfall.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sprites/Backgrounds/env-preview.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
@@ -734,6 +735,9 @@ visible = false
 
 [node name="SavePoint2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 232, 182 )
+
+[node name="Area2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( 248, 104 )
 
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]
