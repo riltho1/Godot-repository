@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sprites/Backgrounds/env-preview.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Goblin.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Slime.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -645,6 +646,7 @@ size = 33
 font_data = ExtResource( 8 )
 
 [node name="World" type="Node2D"]
+position = Vector2( -21, 3 )
 script = ExtResource( 7 )
 
 [node name="Background" type="Sprite" parent="."]
@@ -742,6 +744,10 @@ position = Vector2( 24, 187 )
 [node name="CollisionShape2D" parent="Area2D/Path2D/PathFollow2D/Sprite/Area2D" index="0"]
 position = Vector2( 0, 1 )
 
+[node name="Node2D" parent="." instance=ExtResource( 19 )]
+position = Vector2( 186, 105 )
+
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]
 [editable path="Area2D"]
+[editable path="Node2D"]
