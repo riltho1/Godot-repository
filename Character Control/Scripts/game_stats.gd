@@ -2,6 +2,7 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
+onready var coins = 0
 
 func start_level():
 	current_spawn = null

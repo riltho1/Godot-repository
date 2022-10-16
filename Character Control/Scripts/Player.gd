@@ -79,6 +79,8 @@ func _physics_process(delta):
 	if coins == 2:
 		get_tree().change_scene("res://Scenes/Win Screen.tscn")
 
+func add_coin():
+	coins = coins + 1
 
 func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Deadly"):
@@ -86,8 +88,3 @@ func _on_DeathZone_area_entered(area):
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 			
-
-func add_coin():
-	coins = coins + 1
-	
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Slime.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Coins.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/Coins_Score.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -642,11 +643,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 4/z_index = 0
 
+[sub_resource type="DynamicFont" id=71]
+size = 20
+font_data = ExtResource( 8 )
+
 [sub_resource type="DynamicFont" id=35]
 size = 20
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=70]
+size = 20
 font_data = ExtResource( 8 )
 
 [node name="World" type="Node2D"]
@@ -735,22 +741,31 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_left = 976.0
+margin_top = 56.0
+margin_right = 1216.0
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 71 )
+text = "COINS OF 20:"
+
 [node name="Timer" type="Label" parent="CanvasLayer/Control"]
-margin_left = 1088.0
+margin_left = 1080.0
 margin_top = 24.0
-margin_right = 1248.0
+margin_right = 1244.0
 margin_bottom = 44.0
 custom_fonts/font = SubResource( 35 )
 text = "00:00:00"
 align = 2
 
 [node name="Coins_Score" type="Label" parent="CanvasLayer/Control"]
-margin_left = 1072.0
-margin_top = 64.0
-margin_right = 1248.0
-margin_bottom = 84.0
+margin_left = 1224.0
+margin_top = 56.0
+margin_right = 1252.0
+margin_bottom = 76.0
 custom_fonts/font = SubResource( 70 )
-text = "COINS: 0/20"
+text = "0"
+script = ExtResource( 21 )
 
 [node name="PauseMenu" parent="CanvasLayer/Control" instance=ExtResource( 18 )]
 visible = false
@@ -769,6 +784,8 @@ position = Vector2( 568, 138 )
 
 [node name="Coin" parent="." instance=ExtResource( 20 )]
 position = Vector2( 246, 104 )
+
+[connection signal="area_entered" from="Coin" to="CanvasLayer/Control/Coins_Score" method="_on_Coin_area_entered"]
 
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]
