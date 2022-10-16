@@ -2,6 +2,7 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
+
 func start_level():
 	current_spawn = null
 	game_start_time = OS.get_ticks_msec()
@@ -39,3 +40,5 @@ func get_time():
 			msec = "0" + str(msec)
 	
 	return str(minutes) + ":" + str(seconds) + ":" + str(msec)
+
+

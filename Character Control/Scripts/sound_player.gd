@@ -27,7 +27,7 @@ func _ready():
 	add_child(music_player)
 	music_player.play()
 
-func chang_song(track):
+func change_song(track):
 	music_player.stream = load (music_tracks[track])
 	music_player.play()
 

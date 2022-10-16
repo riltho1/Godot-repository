@@ -4,6 +4,7 @@ export (int) var speed = 120
 export (int) var jump_speed = -180
 export (int) var gravity = 400
 export (int) var slide_speed = 400
+var coins = 0
 
 var velocity = Vector2.ZERO
 
@@ -73,6 +74,10 @@ func _physics_process(delta):
 	#set gravity
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	#Completed game scene
+	if coins == 2:
+		get_tree().change_scene("res://Scenes/Win Screen.tscn")
 
 
 func _on_DeathZone_area_entered(area):
@@ -80,3 +85,9 @@ func _on_DeathZone_area_entered(area):
 		SoundPlayer.play_sound_effects("dead")
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
+			
+
+func add_coin():
+	coins = coins + 1
+	
+
