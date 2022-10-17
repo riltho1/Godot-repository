@@ -783,9 +783,19 @@ position = Vector2( 0, 1 )
 position = Vector2( 568, 138 )
 
 [node name="Coin" parent="." instance=ExtResource( 20 )]
-position = Vector2( 246, 104 )
+position = Vector2( 135, 87 )
 
-[connection signal="area_entered" from="Coin" to="CanvasLayer/Control/Coins_Score" method="_on_Coin_area_entered"]
+[node name="Coin2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 87, 119 )
+
+[node name="Coin3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 303, 183 )
+
+[node name="Coin4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 191, 199 )
+
+[node name="Coin5" parent="." instance=ExtResource( 20 )]
+position = Vector2( 303, 87 )
 
 [editable path="SpinningBlade"]
 [editable path="DoorAndButton"]

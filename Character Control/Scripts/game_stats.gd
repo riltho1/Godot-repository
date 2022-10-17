@@ -2,7 +2,7 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null
-onready var coins = 0
+export (float) var coins = 0
 
 func start_level():
 	current_spawn = null
@@ -10,8 +10,10 @@ func start_level():
 	
 func reset():
 	current_spawn = null
+	coins = 0
 	get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
+	
 	
 func check_reset():
 	if current_spawn == null:
@@ -41,5 +43,11 @@ func get_time():
 			msec = "0" + str(msec)
 	
 	return str(minutes) + ":" + str(seconds) + ":" + str(msec)
+
+func add_coin():
+	coins = coins + 1
+
+	if coins == 5:
+		get_tree().change_scene("res://Scenes/Win Screen.tscn")
 
 

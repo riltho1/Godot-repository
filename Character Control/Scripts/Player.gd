@@ -76,11 +76,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	#Completed game scene
-	if coins == 2:
-		get_tree().change_scene("res://Scenes/Win Screen.tscn")
 
-func add_coin():
-	coins = coins + 1
 
 func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Deadly"):
