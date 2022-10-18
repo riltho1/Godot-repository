@@ -49,5 +49,6 @@ func add_coin():
 
 	if coins == 5:
 		get_tree().change_scene("res://Scenes/Win Screen.tscn")
+		coins = 0
 
 

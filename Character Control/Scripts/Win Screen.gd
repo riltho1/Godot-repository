@@ -10,7 +10,6 @@ func set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
-	
 
 
 func _on_Quit_To_Menu_pressed():
