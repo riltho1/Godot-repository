@@ -37,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1.0435, -1, 0, 0, 0, 0, -2.02678, -49, 0, 0, 0, 0, 136.615, -50.0213, 0, -3.5385, 0, 3.5385, 135.632, -24.4894, 0, 0, 0, 0, 135.58, -1, 0, 0, 0, 0, 85.4242, -1, 0, 0, 0, 0, 85.4242, -17.0069, 0, 0, 0, 0, 31.8571, -17.3404, 0, 0, 0, 0, 31.8571, -1, 0, 0, 0, 0, 2, -2, 0, 0, 0, 0, 1, -2, 0, 0, 0, 0, 1, -1, 0, 0, 0, 0, 1, -2 )
+"points": PoolVector2Array( 0, 0, 0, 0, 23.4625, -46.02, 0, 0, 0, 0, 108.208, -46.1379, 0, 0, 0, 0, 108.208, -4.58339e-07, 0, 0, 0, 0, 89.5839, 0, 0, 0, 0, 0, 89.5839, -15.0065, 0, 0, 0, 0, 40.5261, -16.007, 0, 0, 0, 0, 40.5261, 0, 0, 0, 0, 0, 22.396, 0, 0, 0, 0, 0, 22.396, -46.02 )
 }
 
 [sub_resource type="CircleShape2D" id=2]
@@ -53,12 +53,12 @@ anims/RESET = SubResource( 3 )
 anims/Spin = SubResource( 4 )
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( -2.20189, 2.04036 )
+position = Vector2( -8, 4.76837e-07 )
 scale = Vector2( 0.887179, 1.04036 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( -1.0435, -1 )
+position = Vector2( 23.4625, -46.02 )
 rotation = -1.63511
 rotate = false
 
