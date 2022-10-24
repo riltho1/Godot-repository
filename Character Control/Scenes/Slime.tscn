@@ -17,6 +17,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path2D/PathFollow2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Path2D/PathFollow2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "SlimeRun"
@@ -37,7 +61,7 @@ tracks/0/keys = {
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -48, 22, 0, 0, 0, 0, -48, -10, 0, 0, 0, 0, 48, -10, 0, 0, 0, 0, 48, 54, 0, 0, 0, 0, 16, 54, 0, 0, 0, 0, 16, 38, 0, 0, 0, 0, -16, 38, 0, 0, 0, 0, -16, 54, 0, 0, 0, 0, -48, 54, 0, 0, 0, 0, -48, 22 )
 }
 
 [sub_resource type="CircleShape2D" id=4]
@@ -55,6 +79,9 @@ anims/SlimeRun = SubResource( 2 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -48, -7.99947 )
+rotation = -1.5708
+offset = 30.0
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]

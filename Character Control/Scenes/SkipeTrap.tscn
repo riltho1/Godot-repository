@@ -34,7 +34,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "SpikeTrigger"
-length = 2.0
+length = 1.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
