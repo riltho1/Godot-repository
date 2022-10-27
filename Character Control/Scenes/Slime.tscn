@@ -59,9 +59,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -48, 22, 0, 0, 0, 0, -48, -10, 0, 0, 0, 0, 48, -10, 0, 0, 0, 0, 48, 54, 0, 0, 0, 0, 16, 54, 0, 0, 0, 0, 16, 38, 0, 0, 0, 0, -16, 38, 0, 0, 0, 0, -16, 54, 0, 0, 0, 0, -48, 54, 0, 0, 0, 0, -48, 22 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0 )
 }
 
 [sub_resource type="CircleShape2D" id=4]
@@ -69,6 +69,7 @@ radius = 7.07107
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
+follow_speed = 100
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SlimeRun"
@@ -76,15 +77,16 @@ anims/RESET = SubResource( 1 )
 anims/SlimeRun = SubResource( 2 )
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 3 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( -48, -7.99947 )
+position = Vector2( 29.9902, 0 )
 rotation = -1.5708
 offset = 30.0
 rotate = false
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
+position = Vector2( -7.62939e-06, 2.00975 )
 texture = ExtResource( 1 )
 hframes = 6
 
