@@ -47,7 +47,7 @@ func get_time():
 func add_coin():
 	coins = coins + 1
 
-	if coins == 5:
+	if coins == 20:
 		get_tree().change_scene("res://Scenes/Win Screen.tscn")
 		coins = 0
 
